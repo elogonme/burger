@@ -1,4 +1,4 @@
-const orm = require('./config/orm.js');
+const orm = require('../config/orm');
 
 // TO DO create the code that will call the ORM functions using burger specific input for the ORM.
 
@@ -17,4 +17,4 @@ const burger = {
   };
   
   // Export the database functions for the controller (catsController.js).
-  module.exports = cat;
+  module.exports = burger;
