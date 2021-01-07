@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     // UPDATE
   const devourBtns = document.querySelectorAll('.devour-btn');
 
-  // Set up the event listener for the create button
+  // Set up the event listener for the Devour button
   if (devourBtns) {
     devourBtns.forEach((button) => {
       button.addEventListener('click', (e) => {
@@ -72,7 +72,39 @@ document.addEventListener('DOMContentLoaded', (event) => {
         });
       });
     });
-  }
+  };
+
+    // Delete
+    const deleteBtns = document.querySelectorAll('.delete-btn');
+
+    // Set up the event listener for the delete button
+    if (deleteBtns) {
+      deleteBtns.forEach((button) => {
+        button.addEventListener('click', (e) => {
+          console.log('delete');
+          // Grabs the id of the element that goes by the name, "id"
+          const id = e.target.getAttribute('data-id');
+  
+          fetch(`/api/burgers/${id}`, {
+            method: 'DELETE',
+            headers: {
+              Accept: 'application/json',
+              'Content-Type': 'application/json',
+            },
+  
+          }).then((response) => {
+            // Check that the response is all good
+            // Reload the page so the user can see the new quote
+            if (response.ok) {
+              console.log(`deleted burger with id: ${id}`);
+              location.reload('/');
+            } else {
+              alert('something went wrong!');
+            }
+          });
+        });
+      });
+    };
   
 });
   

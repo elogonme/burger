@@ -74,6 +74,23 @@ const orm = {
         });
     },
 
+    // delete from table based on condition
+    deleteOne(table, condition, cb) {
+        let queryString = `DELETE FROM ${table}`;
+        queryString += ' WHERE ';
+        queryString += condition;
+
+        console.log(queryString);
+        connection.query(queryString, (err, result) => {
+        if (err) {
+            throw err;
+        }
+
+        console.log(`${result.affectedRows} burger deleted! ${condition}\n`);
+        cb(result);
+        });
+    },
+
 };
 
 module.exports = orm;
