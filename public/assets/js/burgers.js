@@ -44,7 +44,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
   if (devourBtns) {
     devourBtns.forEach((button) => {
       button.addEventListener('click', (e) => {
-        console.log('devour');
         // Grabs the id of the element that goes by the name, "id"
         const id = e.target.getAttribute('data-id');
         const newDevourState = {
@@ -81,7 +80,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
     if (deleteBtns) {
       deleteBtns.forEach((button) => {
         button.addEventListener('click', (e) => {
-          console.log('delete');
           // Grabs the id of the element that goes by the name, "id"
           const id = e.target.getAttribute('data-id');
   
