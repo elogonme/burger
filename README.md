@@ -17,7 +17,7 @@
 ## Installation
 
 App is deployed at [Heroku](https://heroku.com/). To install locally download files from provided Repo URL. Run terminal and navigate to project folder. Make sure node is installed. Run `npm install` to install all dependencies before running app. Run `npm start` to start app.  
-Application can be accessed at [https://cryptic-basin-46919.herokuapp.com/](https://cryptic-basin-46919.herokuapp.com/)
+Application can be accessed at [https://eat-da-burger-hbs-mvc.herokuapp.com/](https://eat-da-burger-hbs-mvc.herokuapp.com/)
 
 ## Usage
 
