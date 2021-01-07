@@ -11,12 +11,12 @@ document.addEventListener('DOMContentLoaded', (event) => {
       createCatBtn.addEventListener('submit', (e) => {
         e.preventDefault();
   
-        // Grabs the value of the textarea that goes by the name, "burger"
+        // Grabs the value of the textarea that goes by the name "burger"
         const newBurger = {
           name: document.getElementById('burger').value.trim(),
         };
   
-        // Send POST request to create a new quote
+        // Send POST request to create a new burger
         fetch('/api/burgers', {
           method: 'POST',
           headers: {
@@ -30,12 +30,49 @@ document.addEventListener('DOMContentLoaded', (event) => {
           // Empty the form
           document.getElementById('burger').value = '';
   
-          // Reload the page so the user can see the new quote
+          // Reload the page so the user can see the new burger
           console.log('Sent request to add a new Burger!', newBurger);
           location.reload();
         });
       });
     }
+
+    // UPDATE
+  const devourBtns = document.querySelectorAll('.devour-btn');
+
+  // Set up the event listener for the create button
+  if (devourBtns) {
+    devourBtns.forEach((button) => {
+      button.addEventListener('click', (e) => {
+        console.log('devour');
+        // Grabs the id of the element that goes by the name, "id"
+        const id = e.target.getAttribute('data-id');
+        const newDevourState = {
+          devoured: true,
+        };
+
+        fetch(`/api/burgers/${id}`, {
+          method: 'PUT',
+          headers: {
+            Accept: 'application/json',
+            'Content-Type': 'application/json',
+          },
+
+          // make sure to serialize the JSON body
+          body: JSON.stringify(newDevourState),
+        }).then((response) => {
+          // Check that the response is all good
+          // Reload the page so the user can see the new quote
+          if (response.ok) {
+            console.log(`changed devoured state to: ${true}`);
+            location.reload('/');
+          } else {
+            alert('something went wrong!');
+          }
+        });
+      });
+    });
+  }
   
 });
   
