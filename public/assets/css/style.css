@@ -11,3 +11,9 @@ h1 {
 .burger-img {
     width: 150px;
 }
+
+@media screen and (max-width: 600px) {
+    .burger-img {
+        width: 100px;
+    }
+  }
