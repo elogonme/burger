@@ -1,0 +1,13 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #ffe6cc;
+}
+
+h1 {
+    font-size: 2rem;
+    color: red;
+}
+
+.burger-img {
+    width: 150px;
+}
