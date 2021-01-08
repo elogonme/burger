@@ -12,6 +12,10 @@ h1 {
     width: 150px;
 }
 
+.error {
+    display: none;
+}
+
 textarea {
     border: 1px solid rgba(0,0,0,.125);
 }

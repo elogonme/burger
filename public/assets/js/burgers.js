@@ -4,6 +4,13 @@ document.addEventListener('DOMContentLoaded', (event) => {
       console.info('DOM loaded');
     }
   
+    // Helper functon to display error message for 3 sec on page instead of alert;
+    const alertError = () => {
+      const errEl = document.getElementById('error');
+      errEl.style.display = 'block';
+      setTimeout(() => errEl.style.display = 'none', 3000);
+    };
+
     // CREATE
     const createCatBtn = document.getElementById('create-form');
   
@@ -66,7 +73,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
             console.log(`changed devoured state to: ${true}`);
             location.reload('/');
           } else {
-            alert('something went wrong!');
+            alertError();
           }
         });
       });
@@ -97,7 +104,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
               console.log(`deleted burger with id: ${id}`);
               location.reload('/');
             } else {
-              alert('something went wrong!');
+              alertError();
             }
           });
         });
